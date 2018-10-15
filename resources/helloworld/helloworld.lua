@@ -1,3 +1,11 @@
 AddEventHandler("playerSpawned", function (spawnInfo)
-    TriggerEvent("chatMessage", 'Aehoo', { 255, 255, 255 }, "hello, client world")
+    local message = {
+        color = { 255, 255, 255 },
+        multiline = false,
+        args = {
+            'HU3HU3', -- author
+            'AEHOOOOOO MODAFOCA' -- message
+        }
+    }
+    TriggerEvent("chat:addMessage", message)
 end)
