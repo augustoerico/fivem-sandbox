@@ -1,0 +1,20 @@
+service: ${file(package.json):name}
+version: ${file(package.json):version}
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${opt:stage, 'dev'}
+
+package:
+  exclude:
+    - .gitignore
+
+functions:
+
+  increment:
+    handler: handlers/http/increment.handle
+    events:
+      - http:
+          path: /counter
+          method: any

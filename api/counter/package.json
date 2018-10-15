@@ -1,0 +1,14 @@
+{
+  "name": "counter",
+  "version": "0.1.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "HUErcio @FiveM_Forum",
+  "license": "ISC",
+  "devDependencies": {
+    "serverless": "^1.32.0"
+  }
+}
