@@ -1,0 +1,5 @@
+PerformHttpRequest("https://02oo5xe6f2.execute-api.us-east-1.amazonaws.com/dev/counter", function (errorCode, resultData, resultHeaders)
+    print("Returned error code: " .. tostring(errorCode))
+    print("Returned data: " .. tostring(resultData))
+    print("Returned result Headers: " .. tostring(resultHeaders))
+end)
