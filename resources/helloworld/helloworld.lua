@@ -3,8 +3,8 @@ AddEventHandler("playerSpawned", function (spawnInfo)
         color = { 255, 255, 255 },
         multiline = false,
         args = {
-            'HU3HU3', -- author
-            'AEHOOOOOO MODAFOCA' -- message
+            'put_author_here', -- author
+            'put_message_here' -- message
         }
     }
     TriggerEvent("chat:addMessage", message)
