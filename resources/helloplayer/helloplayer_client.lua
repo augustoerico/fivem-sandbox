@@ -1,4 +1,4 @@
-function debug_in_chat (message)
+function DebugInChat (message)
     TriggerEvent('chat:addMessage', {
         color = { 255, 255, 255 },
         multiline = false,
@@ -9,10 +9,21 @@ function debug_in_chat (message)
     })
 end
 
-AddEventHandler('playerSpawned', function (spawn)
-    debug_in_chat('playerSpawned event in "helloplayer_client"')
+function LoadFreemodeModelAsync ()
     Citizen.CreateThread(function ()
-        local player = GetPlayerIndex() -- index or id? from docs: Player GET_PLAYER_INDEX();
-        debug_in_chat('player: ' .. tostring(player))
+        DebugInChat('[ loading  model ...')
+        model = GetHashKey("mp_f_freemode_01")
+        while (not HasModelLoaded(model)) do
+            -- Busy wait...
+            RequestModel(model)
+            Citizen.Wait(1)
+        end
+        SetPlayerModel(GetPlayerIndex(), model)
+        DebugInChat('... ... ... ...done]')
     end)
+end
+
+AddEventHandler('playerSpawned', function (spawn)
+    DebugInChat('playerSpawned event in "helloplayer_client"')
+    LoadFreemodeModelAsync()
 end)
