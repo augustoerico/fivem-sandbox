@@ -1,3 +1,7 @@
 # Sensitivy data
 fxserver.pem
 server.cfg
+
+# Subprojects
+*-svc/
+sandbox/
